@@ -15,12 +15,17 @@ def main():
         numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
         passwd = ''
+        
         options = [small_letters, caps_letters, numbers, symbols]
+        
         for i in range(0, length):   
              opt = choice(choice(options))
              opt = str(opt)
              passwd+=opt
+        
         print('your password: {}'.format(passwd))
+        
+        
         def again_():
             again = input('Do you want to generate another password? [Y/N]').lower()
             if again == 'y':
@@ -30,6 +35,7 @@ def main():
             else:
                 again_()
         again_()
+    
     except ValueError:
         print('Enter a valid length')
         main()
